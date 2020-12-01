@@ -1,0 +1,56 @@
+.carousel-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.carousel-container .avatarLogo{
+    position: relative;
+    margin-left: 8%;
+    height: 152px;
+}
+.carousel-container h1{
+    padding: 62px;
+    padding-left: 10px;
+    font-family: Poppins;
+    font-weight: 300;
+    font-size: 24px;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    justify-content: space-between;
+    margin:auto;
+}
+.onlyCard{
+    display: flex;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+.onlyCard strong{
+    font-size: 20px;
+    font-weight: 500;
+    color: #707070;
+    position: relative;
+    top: 5px;
+}
+.onlyCard .buttonBuy{
+    background-color: #000000;
+}
+.cards button{
+    border: none;
+}
+.onlyCard .buttonFavorite{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    font-size: 22px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    color:#E16868;
+}

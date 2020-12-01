@@ -1,59 +1,119 @@
 import React from 'react'
 import {Card, Button} from 'react-bootstrap'
+import '../styles/components/carousel.css'
+import photo from '../assets/image-product.png'
+import avatar from '../assets/avatar.png'
+import {GrFormNext, GrFormPrevious} from 'react-icons/gr'
+import {MdFavoriteBorder} from 'react-icons/md'
 
 function Carousel(){
     return(
         <div className="carousel-container">
-            <h1>Madame Ristow</h1>
+            <img className="avatarLogo" src={avatar} alt=""/><h1>Madame Ristow</h1>
             <div className="cards">
+            <button><GrFormPrevious style={{fontSize: '50px'}}/></button>
              <Card className="onlyCard" style={{ width: '14rem' }}>
-            <Card.Img style={{ heigth: '250px'}} variant="top" src="https://i.pinimg.com/originals/01/9e/df/019edf8760948f3555297a226f72d87b.jpg" />
+            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
+            <button className="buttonFavorite"><MdFavoriteBorder/></button>
+            <button className="buttonFavorite"><MdFavoriteBorder/></button>
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
                 <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+                Blusa Feminina Básica Manga Curta Marisa<br/>
+                <strong>R$57,00</strong>
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button className="buttonBuy">Comprar</Button>
             </Card.Body>
             </Card>
 
             <Card className="onlyCard" style={{ width: '14rem' }}>
-            <Card.Img style={{ heigth: '250px'}} variant="top" src="https://i.pinimg.com/originals/01/9e/df/019edf8760948f3555297a226f72d87b.jpg" />
+            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
+            <button className="buttonFavorite"><MdFavoriteBorder/></button>
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
                 <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+                Blusa Feminina Básica Manga Curta Marisa<br/>
+                <strong>R$57,00</strong>
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button className="buttonBuy">Comprar</Button>
             </Card.Body>
             </Card>
 
             <Card className="onlyCard" style={{ width: '14rem' }}>
-            <Card.Img style={{ heigth: '250px'}} variant="top" src="https://i.pinimg.com/originals/01/9e/df/019edf8760948f3555297a226f72d87b.jpg" />
+            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
+            <button className="buttonFavorite"><MdFavoriteBorder/></button>
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
                 <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+                Blusa Feminina Básica Manga Curta Marisa<br/>
+                <strong>R$57,00</strong>
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button className="buttonBuy">Comprar</Button>
             </Card.Body>
             </Card>
 
             <Card className="onlyCard" style={{ width: '14rem' }}>
-            <Card.Img style={{ heigth: '250px'}} variant="top" src="https://i.pinimg.com/originals/01/9e/df/019edf8760948f3555297a226f72d87b.jpg" />
+            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
+            <button className="buttonFavorite"><MdFavoriteBorder/></button>
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
                 <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+                Blusa Feminina Básica Manga Curta Marisa<br/>
+                <strong>R$57,00</strong>
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button className="buttonBuy">Comprar</Button>
             </Card.Body>
             </Card>
-            
+            <button><GrFormNext style={{fontSize: '50px'}}/></button>
+            </div>
+            <img className="avatarLogo" src={avatar} alt=""/><h1>Madame Ristow</h1>
+            <div className="cards">
+            <button><GrFormPrevious style={{fontSize: '50px'}}/></button>
+             <Card className="onlyCard" style={{ width: '14rem' }}>
+            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
+            <button className="buttonFavorite"><MdFavoriteBorder/></button>
+            <button className="buttonFavorite"><MdFavoriteBorder/></button>
+            <Card.Body>
+                <Card.Text>
+                Blusa Feminina Básica Manga Curta Marisa<br/>
+                <strong>R$57,00</strong>
+                </Card.Text>
+                <Button className="buttonBuy">Comprar</Button>
+            </Card.Body>
+            </Card>
+
+            <Card className="onlyCard" style={{ width: '14rem' }}>
+            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
+            <button className="buttonFavorite"><MdFavoriteBorder/></button>
+            <Card.Body>
+                <Card.Text>
+                Blusa Feminina Básica Manga Curta Marisa<br/>
+                <strong>R$57,00</strong>
+                </Card.Text>
+                <Button className="buttonBuy">Comprar</Button>
+            </Card.Body>
+            </Card>
+
+            <Card className="onlyCard" style={{ width: '14rem' }}>
+            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
+            <button className="buttonFavorite"><MdFavoriteBorder/></button>
+            <Card.Body>
+                <Card.Text>
+                Blusa Feminina Básica Manga Curta Marisa<br/>
+                <strong>R$57,00</strong>
+                </Card.Text>
+                <Button className="buttonBuy">Comprar</Button>
+            </Card.Body>
+            </Card>
+
+            <Card className="onlyCard" style={{ width: '14rem' }}>
+            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
+            <button className="buttonFavorite"><MdFavoriteBorder/></button>
+            <Card.Body>
+                <Card.Text>
+                Blusa Feminina Básica Manga Curta Marisa<br/>
+                <strong>R$57,00</strong>
+                </Card.Text>
+                <Button className="buttonBuy">Comprar</Button>
+            </Card.Body>
+            </Card>
+            <button><GrFormNext style={{fontSize: '50px'}}/></button>
             </div>
         </div>
     )

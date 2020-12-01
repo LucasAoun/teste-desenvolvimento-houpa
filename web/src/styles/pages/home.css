@@ -8,16 +8,6 @@
 .page-content{
     display: flex;
     align-items: center;
-    width: 100vw;
-}
-.page-content h1{
-    padding: 50px;
-}
-.cards{
-    display: flex;
     justify-content: center;
     width: 100vw;
-}
-.onlyCard{
-    margin-right: 65px;
 }

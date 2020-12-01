@@ -1,0 +1,106 @@
+.page-detail{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.page-detail .detail-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+    padding: 51px;
+}
+.page-detail .detail-content{
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.page-detail .detail-content a{
+    margin-right: 20px;
+    font-size: 12px;
+    text-decoration: none;
+    color:#000;
+    font-weight: 500;
+}
+.page-detail .detail-content span{
+    color: #979797;
+    font-size: 12px;
+}
+.page-detail .detail-content a, .page-detail .detail-content span{
+    margin-bottom:30px;
+}
+.page-detail .detail-content .description{
+    padding: 20px;
+}
+.page-detail .detail-content .description span{
+    font-size: 14px;
+    color: #000;
+}
+.page-detail .detail-buy{
+    position: relative;
+    width: 30%;
+    height: 100px;
+    top: 46px;
+    line-height: 30px;
+}
+.page-detail .detail-buy #category{
+    font-size: 16px;
+    color: #707070;
+}
+.page-detail .detail-buy h1{
+    font-family: Poppins;
+    font-size: 20px;
+}
+.page-detail .detail-buy .production {
+   font-size: 12px;
+   max-width: 240px;
+   line-height: 15px;
+}
+.page-detail .detail-buy #price {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+ }
+ .page-detail .detail-buy #installment{
+     font-size: 12px;
+     color:#707070;
+ }
+ .page-detail .detail-buy .sizes strong{
+     font-size: 12px;
+ }
+ .page-detail .detail-buy .sizes .buttonSize{
+     background-color: #fff;
+     border: 1px solid #d8d7d7;
+     margin: 5px;
+     color: #707070;
+ }
+ .page-detail .detail-buy .quantity {
+     margin-top: 20px;
+ }
+ .page-detail .detail-buy .quantity span{
+    font-size:16px;
+ }
+ .page-detail .detail-buy .quantity select{
+     width: 86px;
+     height: 40px;
+     margin-right: 10px;
+     border-radius: 4px;
+     border:1px solid rgb(207, 207, 207);
+     margin-bottom: 20px;
+ }
+ .page-detail .detail-buy .buttonBuy{
+     margin-top: 10px;
+     width: 314px;
+     height: 48px;
+     background-color: #000000;
+     border: 0;
+ }
+
+
+
+
