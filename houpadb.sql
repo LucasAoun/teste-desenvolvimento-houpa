@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Dez-2020 às 02:02
--- Versão do servidor: 10.4.14-MariaDB
--- versão do PHP: 7.2.34
+-- Tempo de geração: 02-Dez-2020 às 16:50
+-- Versão do servidor: 10.4.13-MariaDB
+-- versão do PHP: 7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,17 +28,27 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `product` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `description` varchar(160) NOT NULL,
-  `price` float NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `name_product` varchar(80) NOT NULL,
+  `description` varchar(150) NOT NULL,
   `pquantity` int(11) NOT NULL,
   `mquantity` int(11) NOT NULL,
   `gquantity` int(11) NOT NULL,
   `ggquantity` int(11) NOT NULL,
   `photo` varchar(100) NOT NULL,
-  `id_store` int(11) NOT NULL
+  `id_store` int(11) DEFAULT NULL,
+  `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `product`
+--
+
+INSERT INTO `product` (`id_product`, `name_product`, `description`, `pquantity`, `mquantity`, `gquantity`, `ggquantity`, `photo`, `id_store`, `price`) VALUES
+(1, 'Blusa Feminina Básica Manga Curta Marisa', '- Camiseta masculina - Manga curta - Gola redonda - Estampa super herói escudo capitão - Marca: Marvel - Tecido: meia malha - Composição: 100% algodão', 20, 20, 50, 30, '1606915275114=image-product.png', 1, 57),
+(2, 'Blusa Feminina Básica Manga Curta Marisa', '- Camiseta masculina - Manga curta - Gola redonda - Estampa super herói escudo capitão - Marca: Marvel - Tecido: meia malha - Composição: 100% algodão', 20, 20, 50, 30, '1606918106109=image-product.png', 1, 57),
+(3, 'Blusa Feminina Básica Manga Curta Marisa', '- Camiseta masculina - Manga curta - Gola redonda - Estampa super herói escudo capitão - Marca: Marvel - Tecido: meia malha - Composição: 100% algodão', 20, 20, 50, 30, '1606918111772=image-product.png', 1, 57),
+(4, 'Blusa Feminina Básica Manga Curta Marisa', '- Camiseta masculina - Manga curta - Gola redonda - Estampa super herói escudo capitão - Marca: Marvel - Tecido: meia malha - Composição: 100% algodão', 20, 20, 50, 30, '1606918128227=image-product.png', 1, 57);
 
 -- --------------------------------------------------------
 
@@ -47,10 +57,18 @@ CREATE TABLE `product` (
 --
 
 CREATE TABLE `store` (
-  `id` int(11) NOT NULL,
-  `name` varchar(80) NOT NULL,
+  `id_store` int(11) NOT NULL,
+  `name_store` varchar(80) NOT NULL,
   `thumb` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `store`
+--
+
+INSERT INTO `store` (`id_store`, `name_store`, `thumb`) VALUES
+(1, 'Madame Ristow', '1606915147231=avatar 152 x 152px.png'),
+(2, 'Madame Ristow', '1606918143432=avatar 152 x 152px.png');
 
 --
 -- Índices para tabelas despejadas
@@ -60,14 +78,14 @@ CREATE TABLE `store` (
 -- Índices para tabela `product`
 --
 ALTER TABLE `product`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_store` (`id_store`);
+  ADD PRIMARY KEY (`id_product`),
+  ADD KEY `fk_product` (`id_store`);
 
 --
 -- Índices para tabela `store`
 --
 ALTER TABLE `store`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_store`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -77,13 +95,13 @@ ALTER TABLE `store`
 -- AUTO_INCREMENT de tabela `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `store`
 --
 ALTER TABLE `store`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_store` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para despejos de tabelas
@@ -93,7 +111,7 @@ ALTER TABLE `store`
 -- Limitadores para a tabela `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `fk_store` FOREIGN KEY (`id_store`) REFERENCES `store` (`id`);
+  ADD CONSTRAINT `fk_product` FOREIGN KEY (`id_store`) REFERENCES `store` (`id_store`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
