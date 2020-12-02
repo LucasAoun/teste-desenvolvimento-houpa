@@ -1,122 +1,82 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import api from '../services/api'
 import {Card, Button} from 'react-bootstrap'
 import '../styles/components/carousel.css'
-import photo from '../assets/image-product.png'
 import avatar from '../assets/avatar.png'
 import {GrFormNext, GrFormPrevious} from 'react-icons/gr'
 import {MdFavoriteBorder} from 'react-icons/md'
 
+
+interface Item{
+    id: number,
+    name: string,
+    price: number,
+    description: string
+    pquantity: number,
+    mquantity: number,
+    gquantity: number,
+    ggquantity: number,
+    photo: string,
+    id_store:number,
+    image_url: string
+}
+
+interface Store{
+    id: number,
+    name: string,
+    thumb:string,
+    image_url: string
+}
+
 function Carousel(){
+
+    const [product, setProduct] = useState<Item[]>([])
+    const [store, setStore] = useState<Store[]>([])
+
+    useEffect(()=>{
+        api.get('product').then(response=>{
+            setProduct(response.data)
+        })
+    }, [])
+
+    useEffect(()=>{
+        api.get('store').then(response=>{
+            setStore(response.data)
+        })
+    }, [])
+
     return(
         <div className="carousel-container">
-            <img className="avatarLogo" src={avatar} alt=""/><h1>Madame Ristow</h1>
-            <div className="cards">
-            <button><GrFormPrevious style={{fontSize: '50px'}}/></button>
-             <Card className="onlyCard" style={{ width: '14rem' }}>
-            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
-            <button className="buttonFavorite"><MdFavoriteBorder/></button>
-            <button className="buttonFavorite"><MdFavoriteBorder/></button>
-            <Card.Body>
-                <Card.Text>
-                Blusa Feminina Básica Manga Curta Marisa<br/>
-                <strong>R$57,00</strong>
-                </Card.Text>
-                <Button className="buttonBuy">Comprar</Button>
-            </Card.Body>
-            </Card>
-
-            <Card className="onlyCard" style={{ width: '14rem' }}>
-            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
-            <button className="buttonFavorite"><MdFavoriteBorder/></button>
-            <Card.Body>
-                <Card.Text>
-                Blusa Feminina Básica Manga Curta Marisa<br/>
-                <strong>R$57,00</strong>
-                </Card.Text>
-                <Button className="buttonBuy">Comprar</Button>
-            </Card.Body>
-            </Card>
-
-            <Card className="onlyCard" style={{ width: '14rem' }}>
-            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
-            <button className="buttonFavorite"><MdFavoriteBorder/></button>
-            <Card.Body>
-                <Card.Text>
-                Blusa Feminina Básica Manga Curta Marisa<br/>
-                <strong>R$57,00</strong>
-                </Card.Text>
-                <Button className="buttonBuy">Comprar</Button>
-            </Card.Body>
-            </Card>
-
-            <Card className="onlyCard" style={{ width: '14rem' }}>
-            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
-            <button className="buttonFavorite"><MdFavoriteBorder/></button>
-            <Card.Body>
-                <Card.Text>
-                Blusa Feminina Básica Manga Curta Marisa<br/>
-                <strong>R$57,00</strong>
-                </Card.Text>
-                <Button className="buttonBuy">Comprar</Button>
-            </Card.Body>
-            </Card>
+            {store.map(sto=>(
+                <>
+                 <img className="avatarLogo" src={avatar} alt=""/>
+                 <h1>{sto.name}</h1>
+                 <div className="cards">
+                 <button><GrFormPrevious style={{fontSize: '50px'}}/></button>
+            {product.map(item=>(
+                  <Card className="onlyCard" style={{ width: '14rem' }}>
+                 <Card.Img style={{ height: '413px'}} variant="top" src={item.image_url} />
+                 <button className="buttonFavorite"><MdFavoriteBorder/></button>
+                 <button className="buttonFavorite"><MdFavoriteBorder/></button>
+                 <Card.Body>
+                     <Card.Text>
+                     {item.name}<br/>
+                        <strong>R$ {item.price}</strong>
+                     </Card.Text>
+                     <Button className="buttonBuy">Comprar</Button>
+                 </Card.Body>
+                 </Card>
+            ))}
             <button><GrFormNext style={{fontSize: '50px'}}/></button>
-            </div>
-            <img className="avatarLogo" src={avatar} alt=""/><h1>Madame Ristow</h1>
-            <div className="cards">
-            <button><GrFormPrevious style={{fontSize: '50px'}}/></button>
-             <Card className="onlyCard" style={{ width: '14rem' }}>
-            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
-            <button className="buttonFavorite"><MdFavoriteBorder/></button>
-            <button className="buttonFavorite"><MdFavoriteBorder/></button>
-            <Card.Body>
-                <Card.Text>
-                Blusa Feminina Básica Manga Curta Marisa<br/>
-                <strong>R$57,00</strong>
-                </Card.Text>
-                <Button className="buttonBuy">Comprar</Button>
-            </Card.Body>
-            </Card>
-
-            <Card className="onlyCard" style={{ width: '14rem' }}>
-            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
-            <button className="buttonFavorite"><MdFavoriteBorder/></button>
-            <Card.Body>
-                <Card.Text>
-                Blusa Feminina Básica Manga Curta Marisa<br/>
-                <strong>R$57,00</strong>
-                </Card.Text>
-                <Button className="buttonBuy">Comprar</Button>
-            </Card.Body>
-            </Card>
-
-            <Card className="onlyCard" style={{ width: '14rem' }}>
-            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
-            <button className="buttonFavorite"><MdFavoriteBorder/></button>
-            <Card.Body>
-                <Card.Text>
-                Blusa Feminina Básica Manga Curta Marisa<br/>
-                <strong>R$57,00</strong>
-                </Card.Text>
-                <Button className="buttonBuy">Comprar</Button>
-            </Card.Body>
-            </Card>
-
-            <Card className="onlyCard" style={{ width: '14rem' }}>
-            <Card.Img style={{ height: '413px'}} variant="top" src={photo} />
-            <button className="buttonFavorite"><MdFavoriteBorder/></button>
-            <Card.Body>
-                <Card.Text>
-                Blusa Feminina Básica Manga Curta Marisa<br/>
-                <strong>R$57,00</strong>
-                </Card.Text>
-                <Button className="buttonBuy">Comprar</Button>
-            </Card.Body>
-            </Card>
-            <button><GrFormNext style={{fontSize: '50px'}}/></button>
-            </div>
+             </div>
+                 </>
+            ))}
+                
+             
         </div>
+                
     )
+
 }
 
 export default Carousel

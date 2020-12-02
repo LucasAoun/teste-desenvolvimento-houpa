@@ -18,7 +18,6 @@
 }
 .cards{
     display: flex;
-    flex-wrap: wrap;
     width: 90vw;
     justify-content: space-between;
     margin:auto;
