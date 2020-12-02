@@ -93,14 +93,53 @@
      border:1px solid rgb(207, 207, 207);
      margin-bottom: 20px;
  }
+ .page-detail .detail-buy .buttonsDetail{
+    margin-top: 10px;
+ }
  .page-detail .detail-buy .buttonBuy{
-     margin-top: 10px;
      width: 314px;
      height: 48px;
      background-color: #000000;
      border: 0;
  }
-
-
+ .page-detail .detail-buy #buttonCar{
+    background-color: #fff;
+    color:#000;
+    border: 1px solid black;
+    margin-top: 10px;
+ }
+ .page-detail .detail-buy .frete{
+     margin-top: 40px;
+ }
+ .page-detail .detail-buy .frete h1{
+     margin-bottom:0;
+     font-size: 20px;
+     font-family: Poppins;
+ }
+ .page-detail .detail-buy .frete p{
+     font-size:14px;
+     margin-bottom: 0;
+ }
+ .page-detail .detail-buy .frete .cepInput{
+     width: 207px;
+     height: 40px;
+     margin-right: 10px;
+     border: 1px solid rgb(207, 207, 207);
+     border-radius:5px;
+ }
+ .page-detail .detail-buy .frete .calcFrete{
+     width: 90px;
+     height: 40px;
+     background-color: #000000;
+     border: 0;
+ }
+ .page-detail .detail-buy .share{
+     margin-top: 40px;
+ }
+ .page-detail .detail-buy .share img{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+ }
 
 

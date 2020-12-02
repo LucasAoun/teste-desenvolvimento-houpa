@@ -4,6 +4,11 @@ import {Link} from 'react-router-dom'
 import {Button} from 'react-bootstrap'
 import photoDetail from '../assets/product-top.png'
 import '../styles/pages/detail.css'
+import pinterest from '../assets/Sub7.svg'
+import whatsapp from '../assets/Sub6.svg'
+import facebook from '../assets/Sub5.svg'
+import instagram from '../assets/Sub4.svg'
+import linkedin from '../assets/Sub3.svg'
 
 function Detail(){
     return(
@@ -48,8 +53,28 @@ function Detail(){
                 </select>
                 <span>Avise-me quando chegar</span>
             </div>
+            <div className="buttonsDetail">
             <Button className="buttonBuy">Comprar</Button><br/>
-            <Button className="buttonBuy">Colocar ao Carrinho</Button>
+            <Button className="buttonBuy" id="buttonCar">Adicionar ao Carrinho</Button>
+            </div>
+
+            <div className="frete">
+                <h1>Frete</h1>
+                <p>Calcule o frete da sua região</p>
+                <input type="number" className="cepInput" id="cepInput" placeholder="CEP"/>
+                <Button className="calcFrete">Calcular</Button>
+                <p>Não sei meu cep</p>
+            </div>
+
+            <div className="share">
+                <h1>Compartilhar</h1>
+                <img src={whatsapp} alt=""/>
+                <img src={pinterest} alt=""/>
+                <img src={instagram} alt=""/>
+                <img src={facebook} alt=""/>
+                <img src={linkedin} alt=""/>
+            </div>
+
             </div>
             </div>
         </div>
