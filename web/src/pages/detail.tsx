@@ -1,4 +1,6 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import { useParams} from 'react-router-dom'
+import api from "../services/api";
 import Menu from '../components/Menu'
 import {Link} from 'react-router-dom'
 import {Button} from 'react-bootstrap'
@@ -10,7 +12,38 @@ import facebook from '../assets/Sub5.svg'
 import instagram from '../assets/Sub4.svg'
 import linkedin from '../assets/Sub3.svg'
 
+    interface Product{
+    serializedProdKey:{
+    product_name: String
+    price: number
+    description: string
+    pquantity: number
+    mquantity: number
+    gquantity: number
+    ggquantity: number
+    photo: String
+        }
+  }
+interface ProductParams{
+    id_product: string
+  }
+
 function Detail(){
+
+    const params = useParams<ProductParams>()
+    const [product, setProduct] = useState<Product>()
+  
+      useEffect(()=>{
+          api.get(`product/${params.id_product}`).then(res =>{   
+              setProduct(res.data)
+          })
+      }, [params.id_product])
+  
+      if(!product){
+        return <p>Loading...</p>
+      }
+
+
     return(
         <div className="page-detail">
             <Menu/>
@@ -20,13 +53,7 @@ function Detail(){
                 <span>Home &gt; Madame Ristow &gt; vestidos</span>
                 <img src={photoDetail} alt=""/>
                 <div className="description">
-                    <span>- Camiseta masculina <br/>
-                        - Manga curta - Gola redonda<br/> 
-                        - Estampa super herói escudo capitão<br/> 
-                        - Marca: Marvel <br/>
-                        - Tecido: meia malha <br/>
-                        - Composição: 100% algodão <br/>
-                        - Modelo veste tamanho: M</span>
+                    <span>{product.serializedProdKey.description}</span>
                 </div>
             </div>
             <div className="detail-buy">
@@ -37,7 +64,7 @@ function Detail(){
                      <span>Produzido e entregue por Madame Ristow Vendido por: Parthenon</span>
                 </div>
 
-                <h1 id="price">R$46,00</h1>
+                <h1 id="price">R${product.serializedProdKey.price},00</h1>
                 <span id="installment">ou até 5x de R$ 9,03 | Atacado mínimo: 6 peças</span>
             <div className="sizes">
                 <strong>Tamanho:</strong><br/>
@@ -49,7 +76,7 @@ function Detail(){
             <div className="quantity">
                 <span>Quantidade</span><br/>    
                 <select name="quantityItem" id="quantityItem">
-                    <option value="1">1</option>
+                    {<option value="1">{product.serializedProdKey.pquantity}</option>}
                 </select>
                 <span>Avise-me quando chegar</span>
             </div>

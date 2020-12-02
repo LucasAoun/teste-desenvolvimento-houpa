@@ -4,9 +4,9 @@ import knex from '../database/connection'
 class StoreController{
     async create(req: Request, res: Response){
        
-       const { name } = req.body
+       const { name_store } = req.body
         const store = {
-            name,
+            name_store,
             thumb: req.file.filename
         } 
 
@@ -32,8 +32,8 @@ class StoreController{
 
     
     async show(req: Request, res: Response){
-        const storeId = req.params.id
-        const storeKey = await knex('store').where('id', storeId).first()
+        const storeId = req.params.id_store
+        const storeKey = await knex('store').where('id_store', storeId).first()
         
         if(!storeId){
             return res.status(400).json({message: 'store not found'})

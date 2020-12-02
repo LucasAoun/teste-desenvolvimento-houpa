@@ -12,8 +12,8 @@ const upload = multer(uploadConfig)
 routes.get('/store', storeController.index)
 routes.get('/product', productController.index)
 
-routes.get('/store/:id', storeController.show)
-routes.get('/product/:id', productController.show)
+routes.get('/store/:id_store', storeController.show)
+routes.get('/product/:id_product', productController.show)
 
 routes.post('/store', upload.single('thumb'), storeController.create)
 routes.post('/product', upload.single('photo'), productController.create)

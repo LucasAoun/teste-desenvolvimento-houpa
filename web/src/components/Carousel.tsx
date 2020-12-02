@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import {Link} from 'react-router-dom'
 import api from '../services/api'
 import {Card, Button} from 'react-bootstrap'
 import '../styles/components/carousel.css'
@@ -8,8 +9,8 @@ import {MdFavoriteBorder} from 'react-icons/md'
 
 
 interface Item{
-    id: number,
-    name: string,
+    id_product: number,
+    name_product: string,
     price: number,
     description: string
     pquantity: number,
@@ -22,8 +23,8 @@ interface Item{
 }
 
 interface Store{
-    id: number,
-    name: string,
+    id_store: number,
+    name_store: string,
     thumb:string,
     image_url: string
 }
@@ -47,10 +48,9 @@ function Carousel(){
 
     return(
         <div className="carousel-container">
-            {store.map(sto=>(
-                <>
+           
                  <img className="avatarLogo" src={avatar} alt=""/>
-                 <h1>{sto.name}</h1>
+                 <h1>Madame Ristow</h1>
                  <div className="cards">
                  <button><GrFormPrevious style={{fontSize: '50px'}}/></button>
             {product.map(item=>(
@@ -60,17 +60,16 @@ function Carousel(){
                  <button className="buttonFavorite"><MdFavoriteBorder/></button>
                  <Card.Body>
                      <Card.Text>
-                     {item.name}<br/>
+                     {item.name_product}<br/>
                         <strong>R$ {item.price}</strong>
                      </Card.Text>
-                     <Button className="buttonBuy">Comprar</Button>
+                     <Link to={`/product/${item.id_product}`}><Button className="buttonBuy">Comprar</Button></Link>
                  </Card.Body>
                  </Card>
             ))}
             <button><GrFormNext style={{fontSize: '50px'}}/></button>
              </div>
-                 </>
-            ))}
+            
                 
              
         </div>
